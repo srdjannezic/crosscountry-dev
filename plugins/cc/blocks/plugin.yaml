@@ -1,0 +1,11 @@
+plugin:
+    name: 'cc.blocks::lang.plugin.name'
+    description: 'cc.blocks::lang.plugin.description'
+    author: CC
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Blocks
+        url: /cc/blocks/blockscontroller/
+        icon: icon-table

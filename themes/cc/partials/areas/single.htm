@@ -1,0 +1,165 @@
+[Blocks]
+region = 6
+==
+<div class="area-wrapper area-{{ area.type }}">
+	<section class="hero-main">
+		<div class="container">
+			<div class="slide">
+				{% if area.desktop_image %}
+					<div class="slide-image slider-desktop" style="background-image: url( '{{area.desktop_image|media}}' );"></div>
+				{% endif %}
+
+				{% if area.mobile_image %}
+					<div class="slide-image slider-mobile" style="background-image: url( '{{area.mobile_image|media}}' );"></div>
+				{% endif %}
+				<div class="slide-content">
+					{% if area.special_title %}
+					<h1>{{ area.special_title }}</h1>
+					{% else %}
+					<h1>Move to {{ area.name }} with confidence.</h1>
+					{% endif %}
+					<p>{{ area.hero_subtitle|raw }}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- app estimate form-->
+    {% partial 'site/cc-app-form' %}
+
+	<section class="area-single-show">
+		<div class="container">
+			{% for content in area.content %}
+				{% set media_src = '/storage/app/media/' ~ content.image %}
+				<div class="intro">
+					<h2>{{ content.title }}</h2>
+					{{ content.subtitle | raw }}
+				</div>
+				<div class="media-wrapper">
+					{% if content.iframe %}
+						<div class="media-box{% if content.image %} yes-thumb{% else %} no-thumb{% endif %}">
+							<figure class="iframe-thumb">
+								<i class="icon-play"></i>
+								{% if content.image %}
+								<img src="{{ media_src }}" />
+								{% endif %}
+							</figure>
+							<div class="iframe-lightbox">
+								<i class="icon-close"></i>
+								<div class="video-holder">
+									<div class="iframe-wrapper">
+										{{ content.iframe|raw }}
+									</div>
+								</div>
+							</div>
+						</div>
+					{% else %}
+						{% if content.image %}
+						<img src="{{ media_src }}" />
+						{% endif %}
+					{% endif %}
+				</div>
+					{{ content.text|raw }}
+			{% endfor %}
+		</div>
+	</section>
+
+	<section class="services">
+		<div class="container">
+			<div class="intro">
+				<h2>{{ area.services_title }}</h2>
+				{{ area.services_subtitle | raw }}
+			</div>
+			{% set storage = '/storage/app/media/' %}
+			<div class="list-all-services">
+			{% for service in area.services %}
+				{% set img = storage ~ service.featured_image %}
+				<div class="service-item">
+					<a href="/services/{{ service.slug }}">
+						<div class="service-image"><img src="{{ url(img) }}" /></div>
+						<h3 class="service-title">{{ service.name }}</h3>
+						<div class="service-text">{{ service.excerpt|raw }}</div>
+						<div class="service-cta">Learn more</div>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<section class="testimonials">
+	<div class="container">
+	    {% component 'Blocks' %}
+    </div>
+		<div class="review-wrapper">
+
+			{% for testimonial in area.testimonials %}
+				{% if testimonial.content %}
+				<div class="reviewBox">
+
+					<div class="review__top">
+						<div class="review__left" >
+							<p class="author">{{ testimonial.author }}</p>
+							<p class="location">{{ testimonial.location }}</p>
+						</div>
+						<div class="review__right">
+							<div class="stars">
+								{% for i in 0..testimonial.review %}
+									<li><i class="icon-star"></i></li>
+								{% endfor %}
+							</div>
+							<div class="source">
+							{% if testimonial.source == 'Yelp' %}
+								<!-- yelp here -->
+								<img alt="" src="/themes/cc/assets/images/testimonials/yelp-t.svg">
+							{% endif %}
+
+							{% if testimonial.source == 'Trustpilot' %}
+								<!-- Trustpilot here -->
+								<img src="/themes/cc/assets/images/testimonials/trustpilot-t.svg" alt="">
+							{% endif %}
+							</div>
+						</div>
+					</div>
+					<div class="review__main">
+						<div class="title">
+							<h4>{{ testimonial.title }}</h4>
+						</div>
+						<div class="content">
+			                {{ testimonial.content|slice(0,200)|raw }}
+			                <a href="{{ testimonial.source_url }}" target="_blank" class="read-more">Read more.</a>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+
+	<section class="single-stories-tabs">
+		<div class="container">
+			<div class="intro">
+				<h2>Headline</h2>
+			</div>
+			{% set brojac = 0 %}
+			{% for item in area.about %}
+				{% if brojac == 0 %}
+				<div class="story-row active">
+				{% else %}
+				<div class="story-row">
+				{% endif %}
+					<div class="story__tab">
+						{{ item.title }}
+					</div>
+					<div class="story__panel">
+						{{ item.text|raw }}
+					</div>
+				</div>
+				{% set brojac = brojac + 1 %}
+			{% endfor %}
+
+		</div>
+	</section>
+
+	{% component 'footerTeaser' %}
+</div>

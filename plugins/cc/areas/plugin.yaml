@@ -1,0 +1,11 @@
+plugin:
+    name: 'cc.areas::lang.plugin.name'
+    description: 'cc.areas::lang.plugin.description'
+    author: CC
+    icon: oc-icon-globe
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Areas
+        url: /Cc/Areas/areascontroller
+        icon: icon-globe

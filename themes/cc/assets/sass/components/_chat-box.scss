@@ -1,0 +1,147 @@
+//--------------------
+//       CHAT BOX
+//--------------------
+
+.shipment-tracking-pg,
+.contact-pg {
+	.chat-box {
+		display: none;
+	}
+}
+
+.chat-box {
+	position: fixed;
+	bottom: 0;
+	right: 50px;
+	width: 208px;
+	height: 50px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow: hidden;
+	z-index: 3;
+	background-color: $c-white;
+	transition: all ease 0.3s;
+	@include breakpoint(tablet) {
+		right: 4%;
+	}
+	@include breakpoint(mobile) {
+		width: 183px;
+		height: 38px;
+	}
+	@include breakpoint(mobile--l) {
+		right: 2rem;
+	}
+	.icon-close {
+		display: none;
+	}
+	&.expand {
+		height: auto;
+		@include breakpoint(mobile) {
+			width: 100%;
+			height: 100%;
+			padding-top: 0px;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 55;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+
+		}
+		.icon-close {
+			@include breakpoint(mobile) {
+				display: block;
+				@include absolute(center-vertical);
+				right: 2rem;
+				color: $c-white;
+			}
+		}
+		.chat-box__tab {
+			height: 50px;
+			span {
+				@include breakpoint(mobile) {
+					text-align: left;
+					padding-left: 2rem;
+				}
+			}
+		}
+		img {
+			@include breakpoint(mobile) {
+				display: block;
+				width: 116px;
+				margin: 50px auto;
+			}
+		}
+	}
+	p {
+		margin-bottom: 20px;
+		@include breakpoint(mobile) {
+			text-align: center;
+			width: 170px;
+
+			margin: 0 auto;
+			margin-bottom: 30px;
+		}
+	}
+	&__tab {
+		position: relative;
+		height: 50px;
+		background-color: $c-mainGreen;
+		color: $c-white;
+		cursor: pointer;
+		@include breakpoint(mobile) {
+			height: 38px;
+		}
+		span {
+			@include absolute(center);
+			width: 100%;
+			text-align: center;
+			@include breakpoint(tablet) {
+				font-size: 14px;
+			}
+		}
+		i {
+			margin-right: 10px;
+		}
+	}
+	.input-wrapper {
+		margin-bottom: 10px;
+		height: 37px;
+		@include breakpoint(mobile) {
+			height: 45px;
+		}
+	}
+	&__inner {
+		padding: 20px;
+		background-color: $c-white;
+	}
+	.btn-default {
+		width: 100%;
+		margin-top: 0;
+		@include breakpoint(mobile) {
+			height: 45px;
+		}
+	}
+	img {
+		display: none;
+
+	}
+	&__note {
+		margin-top: 22px;
+		display: block;
+		text-align: center;
+		font-size: 12px;
+		line-height: 1.4;
+		@include breakpoint(mobile) {
+			width: 200px;
+
+			margin: 0 auto;
+			margin-top: 30px;
+			font-size: 14px;
+			text-align: center;
+		}
+		a {
+			color: $c-mainOrange;
+		}
+	}
+}

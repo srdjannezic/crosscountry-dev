@@ -1,0 +1,40 @@
+{% set area_id = '' %}
+{% set country_id = '' %}
+{% set area_counter = 0 %}
+{% set country_counter = 0 %}
+{% set counter = 0 %}
+
+<p>{{ msg }}</p>
+<div class="itemList">
+{% for city in areas %}
+	{% set country = this.page.components['AreasList'].getCityParent(city.parent_id) %}
+	{% set area = this.page.components['AreasList'].getCityParent(country.parent_id) %}
+	
+	{% if area.id != area_id and area %}		
+		{% if area_counter > 0 %}
+				</div>
+			</div>
+		{% endif %}
+		<h3 class="country-side">{{ area.name }}</h3>
+		<div class="country-wrapper grid">	
+			<div class="grid-sizer"></div>		
+			{% set area_id = area.id %}
+			{% set area_counter = area_counter + 1 %}
+			{% set country_counter = 0 %}
+	{% endif %}
+	{% if country.id != country_id and country %}
+		{% if country_counter > 0 and area.id == area_id %}
+			</div>			
+		{% endif %}
+		
+		<div class="country grid-item"> 
+			<h3 class="country__title"><a href="/{{ country.slug }}-cross-country-moving">{{ country.name }}</a></h3>
+		{% set country_id = country.id %}
+		{% set country_counter = country_counter + 1 %}
+	{% endif %}
+	<div class="country-city">
+		<h4 class="city__title"><a href="/{{ country.slug }}-cross-country-moving/{{ city.slug }}">{{ city.name }}</a></h4>
+	</div>
+	{% set counter = counter + 1 %}
+{% endfor %}
+</div>

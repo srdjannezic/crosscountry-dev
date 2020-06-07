@@ -1,0 +1,11 @@
+plugin:
+    name: 'cc.services::lang.plugin.name'
+    description: 'cc.services::lang.plugin.description'
+    author: CC
+    icon: oc-icon-sliders
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Services
+        url: /cc/services/servicescontroller/
+        icon: icon-life-ring

@@ -1,0 +1,42 @@
+//-------------------------
+//----------   PAGINATION
+//-------------------------
+
+.pagination {
+	padding-bottom: 60px;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 16px;
+		&.active {
+			a {
+				font-family: $baseFont-med;
+			}
+		}
+		a {
+			font-family: $baseFont;
+			font-size: 16px;
+			color: #888888;
+		}
+		&.prev {
+			i {
+				margin-right: 14px;
+			}
+			
+		}
+		&.next {
+			i {
+				margin-left: 14px;
+			}
+			
+		}
+		&.prev,
+		&.next {
+			i {
+				position: relative;
+				top: 7px;
+				font-size: 30px;
+			}
+		} 
+	}
+}

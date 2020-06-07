@@ -1,0 +1,22 @@
+title = "Service Single"
+url = "/services/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ServiceSingle]
+slug = "{{ :slug }}"
+
+[Blocks]
+region = 1
+
+[Blocks whyTitle]
+region = 3
+
+[Blocks footerTeaser]
+region = 14
+
+[SeoGeneral]
+==
+{% component 'ServiceSingle' %}

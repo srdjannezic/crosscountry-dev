@@ -1,0 +1,5 @@
+fields:
+    phone:
+        label: Phone
+        span: auto
+        type: text

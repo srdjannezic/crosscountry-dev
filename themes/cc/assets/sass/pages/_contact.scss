@@ -1,0 +1,130 @@
+//-------------------------
+//----------- CONTACT
+//-------------------------
+
+.contact-intro {
+	background-color: #F2F2F2;
+
+}
+
+.contact-content {
+	padding: 8rem 0 9rem;
+	@include breakpoint(desktop--small) {
+		padding: 4rem 0 4rem;
+	}
+	.container {
+		@extend %clearfix;
+		max-width: 1000px;
+		.contact__right,
+		.contact__left {
+			width: 50%;
+			float: left;
+			@include breakpoint(tablet) {
+				width: 100%;
+				float: none;
+			}
+		}
+		.contact__left {
+			padding-right: 15%;
+			@include breakpoint(tablet) {
+				margin-bottom: 80px;
+				text-align: center;
+				padding-right: 0;
+			}
+			h2 {
+				margin-bottom: 30px;
+				font-family: $baseFont-med;
+				font-size: 34px;
+				line-height: 1.3;
+				@include breakpoint(tablet) {
+					font-size: 2rem;
+				}
+			}
+			p {
+				margin-bottom: 32px;
+				font-size: 14px;
+				line-height: 1.4;
+				@include breakpoint(tablet) {
+					font-size: 1.5rem;
+				}
+			}
+			.tel,
+			.mail {
+				position: relative;
+				margin-bottom: 10px;
+
+				a {
+					position: relative;
+					display: block;
+					padding-left: 40px;
+					color: #444444;
+					@include breakpoint(tablet) {
+						display: inline-block;
+						padding-left: 2.6rem;
+					}
+					&:after {
+						font-family: 'icomoon';
+						@include absolute(center-vertical);
+						left: 0;
+						color: $c-mainOrange;
+					}
+				}
+				
+			}
+			.tel a {
+				&:after {
+					content: "\e915"; 
+				}
+			}
+			.mail a {
+				&:after {
+					content: "\e91e";
+				}
+			}
+		}
+		.contact__right {
+			.input-wrapper {
+				background-color: #F2F2F2;
+				input {
+					max-height: 48px;
+					border-radius: 5px;
+					background-color: transparent;
+					&:focus {
+						border: 1px solid #AFAEAE;
+					}
+				}
+				textarea {
+					
+					font-family: $baseFont;
+					padding: 20px 16px;
+					border: none;
+					background-color: transparent;
+					outline: none;
+				}
+			}
+			.textarea-wrapper {
+				height: 220px;
+				textarea {
+				}
+			}
+		}
+	}
+}
+
+.shipment-form {
+	form {
+		@extend %clearfix;
+	}
+
+	h3 {
+		margin-bottom: 30px;
+		font-size: 14px;
+		line-height: 1.4;
+		color: #444;
+		text-align: center;
+	}
+	.container {
+		max-width: 500px;
+	}
+}
+

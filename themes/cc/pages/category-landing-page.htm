@@ -1,0 +1,43 @@
+title = "Category"
+url = "/category/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Blocks]
+region = 7
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "category"
+
+[blogPosts]
+pageNumber = "1"
+authorFilter = "{{ :author }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category" 
+postPage = "post"
+
+[SeoGeneral]
+==
+<div class="page blog">
+	<section class="blog__top">
+	{% component 'Blocks' %}
+	</section>
+
+	<section class="page-content">
+		<div class="container">
+			<div class="cat-wrapper">
+				{% component 'blogCategories' %}
+			</div>
+			<div class="content-right">
+				{% component 'blogPosts' %}
+			</div>
+		</div>
+	</section>
+</div>

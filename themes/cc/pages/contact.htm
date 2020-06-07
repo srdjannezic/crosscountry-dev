@@ -1,0 +1,48 @@
+title = "Contact"
+url = "/contact-us"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[genericForm forms]
+rules[email] = "required"
+rules[name] = "required"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+mail_enabled = 1
+mail_subject = "new mail from website contact form"
+mail_recipients[] = "srdjan.nezic@wollson.rs"
+mail_resp_enabled = 1
+mail_resp_field = "email"
+mail_resp_from = "noreply@wollson.rs"
+mail_resp_subject = "Thank you for contacting us."
+redirect = "/contact/success"
+inline_errors = "display"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+
+[Blocks]
+region = 9
+
+[Blocks ContactInfo]
+region = 10
+
+[SeoGeneral]
+==
+<section class="contact-intro hero-intro">
+	{% component 'Blocks' %}
+</section>
+<article class="contact-content">
+	<div class="container">
+		<div class="contact__left">
+			{% component 'ContactInfo' %}
+		</div>
+		<div class="contact__right">
+			{% component 'forms' %}
+		</div>
+	</div>
+</article>

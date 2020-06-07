@@ -1,0 +1,6 @@
+plugin:
+    name: 'cc.estimate::lang.plugin.name'
+    description: 'cc.estimate::lang.plugin.description'
+    author: CC
+    icon: oc-icon-database
+    homepage: ''

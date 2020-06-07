@@ -1,0 +1,12 @@
+{% if __SELF__.categories|length > 0 %}
+    <ul class="category-list">
+		<li {% if this.page.id == 'blog-landing-page' or this.page.id == 'blog' or this.page.id == 'post' %} class="active" {% endif %}><a href="/blog/1">All categories</a></li>
+        {% partial __SELF__ ~ "::items"
+            categories = __SELF__.categories
+            currentCategorySlug = __SELF__.currentCategorySlug
+        %}
+        <i class="icon-arrow-down"></i>
+    </ul>
+{% else %}
+    <p>No categories were found.</p>
+{% endif %}

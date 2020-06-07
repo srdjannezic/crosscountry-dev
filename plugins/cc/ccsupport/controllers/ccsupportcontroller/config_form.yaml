@@ -1,0 +1,11 @@
+name: CcSupportController
+modelClass: Cc\Ccsupport\Models\CcSupport
+form: $/cc/ccsupport/models/ccsupport/fields.yaml
+defaultRedirect: cc/ccsupport/ccsupportcontroller
+create:
+    redirect: 'cc/ccsupport/ccsupportcontroller/update/:id'
+    redirectClose: cc/ccsupport/ccsupportcontroller
+update:
+    redirect: cc/ccsupport/ccsupportcontroller
+    redirectClose: cc/ccsupport/ccsupportcontroller
+preview: {  }

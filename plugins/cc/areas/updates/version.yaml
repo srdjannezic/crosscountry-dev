@@ -1,0 +1,32 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table cc_areas_'
+    - builder_table_create_cc_areas_.php
+1.0.3:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas_.php
+1.0.4:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__2.php
+1.0.5:
+    - 'Created table cc_areas_servicearea'
+    - builder_table_create_cc_areas_servicearea.php
+1.0.6:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__3.php
+1.0.7:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__4.php
+1.0.8:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__5.php
+1.0.9:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__6.php
+1.0.10:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__7.php
+1.0.11:
+    - 'Updated table cc_areas_'
+    - builder_table_update_cc_areas__8.php

@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    source:
+        label: source
+        type: text
+    type:
+        label: type
+        type: text
+    location:
+        label: location
+        type: text
+    author:
+        label: author
+        type: text
+    review:
+        label: review
+        type: text

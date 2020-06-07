@@ -1,0 +1,46 @@
+title = "Reviews"
+url = "/reviews"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[VideoReviews]
+
+[Testimonials]
+type = "text"
+featured = "reviews"
+
+[Blocks]
+region = 6
+
+[Blocks footerTeaser]
+region = 19
+
+[SeoGeneral]
+==
+<section class="reviews-intro hero-intro">
+	{% component 'Blocks' %}
+</section>
+
+
+<section class="video-reviews">
+	<div class="container">
+		<h3>Video testimonials</h3>
+		{% component 'VideoReviews' %}
+		<div id="loadMoreWrapper" class="load-more-wrapper">
+			<a href="" id="loadMoreVideos" class="btn-load-more" data-page="2"><span>Load More</span></a>
+		</div>
+	</div>
+</section>
+<section class="text-reviews">
+	<div class="container">
+		<h3 class="text-reviews__title">Reviews across the web</h3>
+		{% component 'Testimonials' %}
+		<div id="loadMoreWrapper" class="load-more-wrapper">
+			<a href="" id="loadMoreReviews" class="btn-load-more" data-page="2"><span>Load More</span></a>
+		</div>
+	</div>
+</section>
+
+{% component 'footerTeaser' %}

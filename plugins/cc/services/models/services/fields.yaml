@@ -1,0 +1,119 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    subtitle:
+        label: Subtitle
+        size: ''
+        span: full
+        type: richeditor
+    excerpt:
+        label: 'Featured text'
+        size: large
+        span: full
+        type: richeditor
+    short_text:
+        label: 'Short description'
+        size: large
+        span: full
+        type: richeditor
+    content_headline:
+        label: 'Content Headline'
+        span: full
+        type: text
+    content:
+        label: Content
+        size: ''
+        span: full
+        type: richeditor
+    youtube:
+        label: 'Youtube Video Iframe'
+        size: large
+        span: full
+        type: textarea
+        comment: 'Find it on your youtube video, Share->Embed and paste here.'
+    media:
+        label: 'Image / Thumb'
+        mode: file
+        span: auto
+        type: mediafinder
+        comment: 'If you set video iframe image will be used as thumbnail'
+    image_on_list:
+        label: 'Featured Image'
+        mode: file
+        span: auto
+        type: mediafinder
+    featured_image:
+        label: 'Icon on front'
+        mode: file
+        span: auto
+        type: mediafinder
+    questions:
+        label: Questions
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        comment: 'What you need to know'
+        form:
+            fields:
+                question:
+                    label: Question
+                    span: full
+                    type: text
+                answer:
+                    label: Answer
+                    size: large
+                    span: full
+                    type: richeditor
+    three_box_title:
+        label: '3 Box Title'
+        size: ''
+        span: auto
+        type: textarea
+    three_image:
+        label: '3 Box Image'
+        mode: file
+        span: auto
+        type: mediafinder
+    three_box_subtitle:
+        label: '3 Box Subtitle'
+        size: ''
+        span: full
+        type: richeditor
+    three_box:
+        label: '3 Box'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                in_title:
+                    label: Title
+                    size: ''
+                    span: auto
+                    type: textarea
+                in_content:
+                    label: Content
+                    size: ''
+                    span: auto
+                    type: richeditor
+tabs:
+    fields:
+        seo_title:
+            label: 'Meta Title'
+            span: auto
+            type: text
+            tab: SEO
+        seo_description:
+            label: 'Meta Description'
+            size: large
+            span: full
+            type: textarea
+            tab: SEO
+        seo_image:
+            label: 'Meta Image'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: SEO

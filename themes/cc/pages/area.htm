@@ -1,0 +1,20 @@
+title = "Area"
+url = "/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[AreaSingle]
+slug = "{{ :slug }}"
+city = "{{ :city }}"
+
+[Blocks]
+region = 6
+
+[Blocks footerTeaser]
+region = 14
+
+[SeoGeneral]
+==
+{% component 'AreaSingle' %}

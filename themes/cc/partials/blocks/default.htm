@@ -1,0 +1,56 @@
+{% set blocks = __SELF__.blocks %}
+
+{% if blocks.type == '3-box' %}
+	{% set box_counter = 1 %}
+	<div class="inner-promo">
+		<div class="container">
+		<div class="three-box">
+			{% for item in blocks.content %}
+				<div class="box">
+					<div class="box-left"><i class="icon-{{ box_counter }}"></i></div>
+					<div class="box-right">
+						<h4>{{ item.title }}</h4>
+						{{ item.content|raw }}
+					</div>
+				</div>
+				{% set box_counter = box_counter + 1 %}
+			{% endfor %}
+		</div>
+		{% if blocks.back_img %}
+			{% set backimg = '/storage/app/media/' ~ blocks.back_img %}
+			<div class="img-wrapper" style="background-image: url('{{ url(backimg) }}');">
+			</div>
+		{% endif %}
+	</div>
+{% elseif blocks.type == 'intro' %}
+	<div class="intro">
+		<div class="container">
+		{% if this.page.id == 'category' %}
+				{% set slug = this.page.components['blogCategories'].currentCategorySlug %}
+
+				{% set cat_name = this.page.components['blogCategories'].getCategoryNameFromSlug(slug) %}
+				
+				<h1>{{ cat_name }}</h1>
+				{% for item in blocks.content %}
+					<p>{{ item.subtitle|raw }}</p>
+				{% endfor %}		
+		{% else %}
+			{% for item in blocks.content %}
+				<h1>{{ item.title }}</h1>
+				<p>{{ item.subtitle|raw }}</p>
+			{% endfor %}
+		{% endif %}
+		</div>
+	</div>
+{% elseif blocks.type == 'footer-message' %}
+	{% set backimg = '/storage/app/media/' ~ blocks.back_img %}
+
+	<section class="teaser" style="background-image: url('{{ url(backimg) }}');">
+		<div class="container">
+			{% for item in blocks.content %}
+				<h2 class="header__title">{{ item.title }}</h2>
+				<div class="link-to-form"><a href="/estimate/my-moving-plan">Get a free quote </a>{{ item.subtitle|raw }}</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

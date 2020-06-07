@@ -1,0 +1,64 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[slider]
+slide_show_id = 1
+
+[ServicesList]
+
+[Blocks]
+region = 1
+
+[Testimonials]
+type = "text"
+featured = "yes"
+
+[Blocks servicesTitle]
+region = 2
+
+[Blocks whyTitle]
+region = 3
+
+[Blocks testimonialsTitle]
+region = 4
+
+[Blocks footerTeaser]
+region = 14
+
+[SeoGeneral]
+==
+<section class="hero-main">
+	<div class="container">
+		{% component 'slider' %}
+	</div>
+</section>
+
+<!-- app estimate form-->
+{% partial 'site/cc-app-form' %}
+
+<section class="services">
+	<div class="container">
+	    {% component 'servicesTitle' %}
+	    <div class="list-all-services">
+			{% component 'ServicesList' %}
+		</div>
+	</div>
+</section>
+<section class="promo-home">
+	<div class="container">
+	    {% component 'whyTitle' %}
+    </div>
+	{% component 'Blocks' %}
+
+</section>
+<section class="testimonials home-reviews">
+	<div class="container">
+	    {% component 'testimonialsTitle' %}
+    </div>
+	    {% component 'Testimonials' %}
+</section>
+{% component 'footerTeaser' %}

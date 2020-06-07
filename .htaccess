@@ -1,0 +1,109 @@
+<IfModule mod_rewrite.c>
+    RewriteRule ^atlanta /georgia-cross-country-moving/atlanta [L,R=301]
+    RewriteRule ^eugene /oregon-cross-country-moving/eugene [L,R=301]
+    RewriteRule ^boise /areas-we-serve [L,R=301]
+    RewriteRule ^houston /texas-cross-country-moving/houston [L,R=301]
+    RewriteRule ^seattle /washington-cross-country-moving/seattle [L,R=301]
+    RewriteRule ^minneapolis /areas-we-serve [L,R=301]
+    RewriteRule ^austin /texas-cross-country-movingaustin [L,R=301]
+    RewriteRule ^los-angeles /california-cross-country-moving/los-angeles [L,R=301]
+    RewriteRule ^phoenix /arizona-cross-country-moving/phoenix [L,R=301]
+    RewriteRule ^saint-louis /areas-we-serve [L,R=301]
+    RewriteRule ^texas /texas-cross-country-moving [L,R=301]
+    RewriteRule ^reno /nevada-cross-country-moving/reno [L,R=301]
+    RewriteRule ^cleveland /ohio-cross-country-moving/cleveland [L,R=301]
+    RewriteRule ^miami /florida-cross-country-moving/miami [L,R=301]
+    RewriteRule ^new-york-city /new-york-cross-country-moving/new-york [L,R=301]
+    RewriteRule ^charlotte /areas-we-serve [L,R=301]
+    RewriteRule ^salt-lake-city /areas-we-serve [L,R=301]
+    RewriteRule ^san-francisco /california-cross-country-moving/san-francisco [L,R=301]
+    RewriteRule ^portland /oregon-cross-country-moving/portland [L,R=301]
+    RewriteRule ^denver /colorado-cross-country-moving/denver [L,R=301]
+    RewriteRule ^santa-barbara /california-cross-country-moving/santa-barbara [L,R=301]
+    RewriteRule ^albuquerque /new-mexico-cross-country-moving/albuquerque [L,R=301]
+    RewriteRule ^brooklyn /new-york-cross-country-moving/brooklyn [L,R=301]
+    RewriteRule ^san-diego /california-cross-country-moving/san-diego [L,R=301]
+    RewriteRule ^privacy-policy /privacy-policy [L,R=301]
+    RewriteRule ^sacramento /california-cross-country-moving/sacramento [L,R=301]
+    RewriteRule ^auto-transport-estimates /servicescar-shipping [L,R=301]
+    RewriteRule ^baltimore /maryland-cross-country-moving/baltimore [L,R=301]
+    RewriteRule ^pittsburgh /areas-we-serve [L,R=301]
+    RewriteRule ^hoboken /new-jersey-cross-country-moving/hoboken [L,R=301]
+    RewriteRule ^boston /massachusetts-cross-country-moving/boston [L,R=301]
+    RewriteRule ^columbus /ohio-cross-country-moving/columbus [L,R=301]
+    RewriteRule ^milwaukee /wisconsin-cross-country-moving/milwaukee [L,R=301]
+    RewriteRule ^san-antonio /texas-cross-country-moving/san-antonio [L,R=301]
+    RewriteRule ^indianapolis /areas-we-serve [L,R=301]
+    RewriteRule ^philadelphia /areas-we-serve [L,R=301]
+    RewriteRule ^dallas /texas-cross-country-moving/dallas [L,R=301]
+    RewriteRule ^long-distance-movers-chicago /illinois-cross-country-moving/chicago [L,R=301]
+    RewriteRule ^chicago /illinois-cross-country-moving/chicago [L,R=301]
+    RewriteRule ^santa-ana /california-cross-country-moving/santa-ana [L,R=301]
+    RewriteRule ^new-haven /areas-we-serve [L,R=301]
+    RewriteRule ^las-vegas /nevada-cross-country-moving/las-vegas [L,R=301]
+    RewriteRule ^free-estimate /estimatemy-moving-plan [L,R=301]
+    RewriteRule ^text-policy /privacy-policy [L,R=301]
+    RewriteRule ^detroit /michigan-cross-country-moving/detroit [L,R=301]
+    RewriteRule ^blog/1 /blog [L,R=301]
+    #RewriteRule ^category/news/1 /category/news [L,R=301]
+    #RewriteRule ^category/tips-tricks/1 /category/tips-tricks [L,R=301]
+    #RewriteRule ^category/blog/1 /category/blog [L,R=301]
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R] # <- for test, for prod use [L,R=301]
+    ##
+    ## You may need to uncomment the following line for some hosting environments,
+    ## if you have installed to a subdirectory, enter the name here also.
+    ##
+    # RewriteBase /
+    
+    ##
+    ## Uncomment following lines to force HTTPS.
+    ##
+    # RewriteCond %{HTTPS} off
+    # RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
+
+    ##
+    ## Black listed folders
+    ##
+    RewriteRule ^bootstrap/.* index.php [L,NC]
+    RewriteRule ^config/.* index.php [L,NC]
+    RewriteRule ^vendor/.* index.php [L,NC]
+    RewriteRule ^storage/cms/.* index.php [L,NC]
+    RewriteRule ^storage/logs/.* index.php [L,NC]
+    RewriteRule ^storage/framework/.* index.php [L,NC]
+    RewriteRule ^storage/temp/protected/.* index.php [L,NC]
+    RewriteRule ^storage/app/uploads/protected/.* index.php [L,NC]
+
+    ##
+    ## White listed folders
+    ##
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} !/.well-known/*
+    RewriteCond %{REQUEST_FILENAME} !/storage/app/uploads/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/app/media/.*
+    RewriteCond %{REQUEST_FILENAME} !/storage/temp/public/.*
+    RewriteCond %{REQUEST_FILENAME} !/themes/.*/(assets|resources)/.*
+    RewriteCond %{REQUEST_FILENAME} !/plugins/.*/(assets|resources)/.*
+    RewriteCond %{REQUEST_FILENAME} !/modules/.*/(assets|resources)/.*
+    RewriteRule !^index.php index.php [L,NC]
+
+    ##
+    ## Block all PHP files, except index
+    ##
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} \.php$
+    RewriteRule !^index.php index.php [L,NC]
+
+    ##
+    ## Standard routes
+    ##
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+</IfModule>

@@ -1,0 +1,11 @@
+name: AuthorsController
+modelClass: Cc\Authors\Models\AuthorsModel
+form: $/cc/authors/models/authorsmodel/fields.yaml
+defaultRedirect: cc/authors/authorscontroller
+create:
+    redirect: 'cc/authors/authorscontroller/update/:id'
+    redirectClose: cc/authors/authorscontroller
+update:
+    redirect: cc/authors/authorscontroller
+    redirectClose: cc/authors/authorscontroller
+preview: {  }

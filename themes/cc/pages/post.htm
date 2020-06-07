@@ -1,0 +1,34 @@
+title = "Post"
+url = "/:category/post/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[SeoBlogPost]
+post = "post"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+authorFilter = "{{ :author }}"
+categoryFilter = "{{ :category }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "post"
+
+[SeoGeneral]
+==
+{% component 'blogPost' %}
+{% component 'SeoBlogPost' data=post %}
+<section class="similar-posts">
+	<div class="container">
+	    <h2>Similar posts</h2>
+	    {% component 'blogPosts' %}
+    </div>
+</section>

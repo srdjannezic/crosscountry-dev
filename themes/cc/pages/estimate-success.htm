@@ -1,0 +1,34 @@
+title = "Estimate Success"
+url = "/estimate/success"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+authorFilter = "{{ :author }}"
+categoryFilter = "tips-tricks"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "post"
+
+[SeoGeneral]
+==
+<main class="estimate-success">
+	<div class="container">
+		<div class="success-message">
+			<i class="icon-checked"></i>
+			<h2>Thank you</h2>
+			<p>You have successfully submitted your request. Our representative will get in touch shortly. </p>
+		</div>
+	</div>
+</main>
+<section class="similar-posts tips-tricks">
+	<div class="container">
+	    <h2>Moving Tips & Tricks</h2>
+	    {% component 'blogPosts' %}
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<div id="chat-box" class="chat-box">
+	<header class="chat-box__tab"><span><i class="icon-headphones"></i>Have Us Call You</span><i class="icon-close"></i> </header>
+	<div class="chat-box__inner">
+		<p>Enter your telephone number and we’ll give you a call</p>
+		<form method="POST" id="chat-form">
+			<div class="input-wrapper">
+				<input type="text" name="phone" id="input-phone" placeholder="(203) 333-3333" />
+			</div>
+			<button class="btn-default btn-call b-grey" type="submit" name="callme"><span>Call me now</span></button>
+		</form>
+		<span class="chat-box__note">Or click <a class="chatTrigger">here</a> to chat live with one of our representatives.</span>
+		<img src="{{ url('/themes/cc/assets/images/chat-box-img.png') }}" alt="">
+	</div>
+</div>

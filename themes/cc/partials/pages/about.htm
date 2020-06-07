@@ -1,0 +1,96 @@
+==
+{% set img = '/storage/app/media/' ~ page.cover_image %}
+
+<section class="hero-about hero hero-intro">
+	<div class="intro">
+		<h1>{{ page.title | striptags }}</h1>
+		{{ page.subtitle|raw }}
+	</div>
+</section>
+
+<section class="about-content">
+{% for section in page.content %}
+			<div class="about-content__top">
+				<div class="left about-info-image">
+					{% set info_image = '/storage/app/media' ~ section.content_gallery %}
+					
+					{% if section.video or section.iframe %}
+							{% set media = section.video|split('.')|last %}
+
+
+							{% if section.iframe %}
+								<div class="media-box{% if section.content_gallery %} yes-thumb{% else %} no-thumb{% endif %}">
+									<figure class="iframe-thumb" style="background-image: url({{ url(info_image) }}); background-repeat: no-repeat; background-size: cover;">
+										<i class="icon-play"></i>
+										{% if section.content_gallery %}
+										<!-- <img src="{{ info_image }}" />-->
+										{% endif %}
+									</figure>
+									<div class="iframe-lightbox">
+										<i class="icon-close"></i>
+										<div class="video-holder">
+											<div class="iframe-wrapper">			
+												{{ section.iframe|raw }}
+											</div>
+										</div>
+									</div>
+								</div>
+							{% elseif media == 'mp4' or media == 'avi' %}
+								{% set video = storage ~ section.video %}
+								<div class="media-wrapper">
+									<video src="{{ url(video) }}" controls="controls">
+										
+									</video>
+									<img src="{{ info_image }}" />
+								</div>
+							{% endif %}
+					{% else %}
+						<img src="{{ info_image }}" />
+					{% endif %}					
+				</div>
+				<div class="right about-info">
+					<div class="about-info__inner">
+						<div class="inner-content">
+							{% if section.content_title %}
+								<h3>{{ section.content_title |striptags }}</h3>
+							{% endif %}
+
+							{% if section.content_subtitle %}
+								{{ section.content_subtitle |raw }}
+							{% endif %}
+
+							{% if section.content_text %}
+								{{ section.content_text |raw }}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="about-content__gallery">
+				<h3>Headline</h3>
+				<div class="container">
+					{% if section.gallery %}
+						{% set img_counter = 0 %}
+						<div class="gallery-box">
+						{% for image in section.gallery %}
+							{% set gallery_img = '/storage/app/media/' ~ image.gallery_image %}
+							{% set attr = '' %}
+							{% if img_counter >= 9 %}
+								{% set attr = 'style=display:none;' %}
+							{% endif %}
+								<div class="gallery-img" {{ attr }} data-src="{{ url(gallery_img) }}" data-fancybox="gallery">
+									<img src="{{ url(gallery_img) }}" />
+ 								</div>			
+							{% set img_counter = img_counter + 1 %}
+						{% endfor %}
+						</div>
+					    <div id="loadMoreAbout" class="load-more-wrapper" style="">
+					      <a href="#" class="btn-load-more"><span>Load More</span></a>
+					    </div>
+					{% endif %}
+				</div>
+		</div>
+{% endfor %}
+</section>
+
+

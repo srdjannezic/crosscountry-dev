@@ -1,0 +1,85 @@
+title = "Areas we serve"
+url = "/areas-we-serve"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[AreasList]
+
+[slider]
+slide_show_id = 3
+
+[Blocks]
+region = 13
+
+[Blocks footerTeaser]
+region = 17
+
+[slider sliderMob]
+slide_show_id = 4
+
+[SeoGeneral]
+==
+<section class="hero-main">
+	<div class="container">
+		{% component 'slider' %}
+	</div>
+</section>
+
+<!-- app estimate form-->
+{% partial 'site/cc-app-form' %}
+
+<section class="all-areas">
+
+	{% component 'Blocks' %}
+
+	<div class="all-areas__top">
+		<div class="container">
+			<div class="map-display">
+				<!-- map here -->
+				<div class="map-wrapper default active-side" data-side="west"><img src="{{ url('/themes/cc/assets/images/regions/us-map-default-1.png') }}" alt=""><div class="cloud-title"><span>Western US</span></div></div>
+				<div class="map-wrapper west" data-side="west"><img src="{{ url('/themes/cc/assets/images/regions/cross-cmovers-west-map.png') }}" alt=""><div class="cloud-title"><span>Western US</span></div></div>
+				<div class="map-wrapper middle" data-side="middle"><img src="{{ url('/themes/cc/assets/images/regions/cross-cmovers-middle-map.png') }}" alt=""><div class="cloud-title"><span>Middle US</span></div></div>
+				<div class="map-wrapper east" data-side="east"><img src="{{ url('/themes/cc/assets/images/regions/cross-cmovers-east-map.png') }}" alt=""><div class="cloud-title"><span>Eastern US</span></div></div>
+				<div class="map-hover-wrapper">
+					<div class="map-hover" data-side="west"></div>
+					<div class="map-hover" data-side="middle"></div>
+					<div class="map-hover" data-side="east"></div>
+				</div>
+			</div>
+			<!-- select areas -->
+			<div class="area-select">
+				<form action="" method="POST">
+					<!-- <div class="input-wrapper">
+						<input type="text" id="where" name="where" placeholder="Where are you moving from/to?">
+					</div> -->
+					<div class="select-wrapper">
+						<select name="choose_area" id="choose_area">
+							<option value="">All areas</option>
+							<option value="Western US">Western US</option>
+							<option value="Middle US">Middle US</option>
+							<option value="Eastern US">Eastern US</option>
+						</select>
+					</div>
+					<div class="select-wrapper">
+						<select name="choose_country" id="choose_country">
+							<option value="">Select Country</option>
+							{% set countries = this.page.components['AreasList'].listCountries() %}
+
+							{% for country in countries %}
+							<option value="{{ country.name }}" data-area="{{ country.areas.name }}">{{ country.name }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="list-areas-display">
+		<div class="container">
+			{% component 'AreasList' %}
+		</div>
+	</div>
+</section>
+{% component 'footerTeaser' %}

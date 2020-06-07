@@ -1,0 +1,123 @@
+fields:
+    name:
+        label: 'Area Name'
+        span: full
+        type: text
+        comment: 'Like: "Arizona"'
+    special_title:
+        label: 'Hero Title'
+        span: auto
+        type: text
+        comment: 'If empty - will show "Move to $area with confidence."'
+    hero_subtitle:
+        label: 'Hero Subtitle'
+        size: ''
+        span: full
+        type: richeditor
+    desktop_image:
+        label: 'Desktop Image'
+        mode: file
+        span: auto
+        type: mediafinder
+    mobile_image:
+        label: 'Mobile Image'
+        mode: file
+        span: auto
+        type: mediafinder
+    areas:
+        label: Country
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    type:
+        label: Type
+        options:
+            Country: Country
+            Area: Area
+            City: City
+        showSearch: true
+        span: auto
+        type: dropdown
+    content:
+        label: Content
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    span: auto
+                    type: text
+                iframe:
+                    label: 'Youtube Video Iframe'
+                    size: large
+                    span: full
+                    type: textarea
+                image:
+                    label: 'Image / Thumb'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                    comment: 'If you set video iframe image will be used as thumbnail'
+                subtitle:
+                    label: Subtitle
+                    size: ''
+                    span: full
+                    type: richeditor
+                text:
+                    label: Text
+                    size: ''
+                    span: full
+                    type: richeditor
+    about:
+        label: About
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: Title
+                    span: auto
+                    type: text
+                text:
+                    label: Text
+                    size: ''
+                    span: full
+                    type: richeditor
+    services_title:
+        label: 'Services TItle'
+        span: auto
+        type: text
+    services_subtitle:
+        label: 'Services Subtitle'
+        size: ''
+        span: full
+        type: richeditor
+    services:
+        label: Services
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: relation
+tabs:
+    fields:
+        seo_title:
+            label: 'Meta Title'
+            span: auto
+            type: text
+            tab: SEO
+        seo_description:
+            label: 'Meta Description'
+            size: large
+            span: full
+            type: textarea
+            tab: SEO
+        seo_image:
+            label: 'Meta Image'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: SEO

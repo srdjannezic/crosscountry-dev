@@ -1,0 +1,11 @@
+plugin:
+    name: 'cc.authors::lang.plugin.name'
+    description: 'cc.authors::lang.plugin.description'
+    author: CC
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Authors
+        url: /cc/authors/authorscontroller
+        icon: icon-male

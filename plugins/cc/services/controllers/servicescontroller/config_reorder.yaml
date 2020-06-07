@@ -1,0 +1,5 @@
+title: ServicesController
+modelClass: Cc\Services\Models\Services
+nameFrom: id
+toolbar:
+    buttons: reorder_toolbar

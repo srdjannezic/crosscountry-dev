@@ -1,0 +1,35 @@
+[menu]
+start = "id-1"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+==
+<div class="header__logo">
+	<a href="/">
+		<img src="{{ url('/themes/cc/assets/images/cc-logo-desktop.svg') }}" alt="crosscountry logo" class="logo-desk">
+		<img src="{{ url('/themes/cc/assets/images/cc-logo-mob.svg') }}" alt="crosscountry logo" class="logo-mob">
+	</a>
+</div>
+<div class="header__allItems">
+	<nav class="header__nav">
+		<div class="header__cta cta-desk">
+			<ul>
+				<li class="btn-estimate" id="externalButton"><a href="/estimate/my-moving-plan"><span>Free estimate</span></a></li>
+				<li class="btn-call"><a href="tel:877 888 0708"><span><i class="icon-phone"></i>877-888-0708</span></a></li>
+			</ul>
+		</div>
+		{% component 'menu' %}
+	</nav>
+</div>
+<div class="header__cta cta-mobile">
+		<ul>
+			<li class="btn-estimate" id="externalButton2"><a href="/estimate/my-moving-plan"><span>Estimate</span></a></li>
+			<li class="btn-call"><a href="tel:877 888 0708"><span>Call now</span></a></li>
+		</ul>
+	</div>
+<div class="ham-menu">
+	<i class="icon-ham"></i>
+	<i class="icon-close"></i>
+</div>

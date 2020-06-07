@@ -1,0 +1,97 @@
+description = "Default layout"
+
+[SeoCmsPage]
+
+[Support]
+
+[SeoGeneral]
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% component 'SeoCmsPage' %}
+    
+        <meta name="author" content="Wollson">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+        <link href="{{ 'assets/css/style.css?v=1.272' |theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/updates.css?v=1.251'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/jquery.fancybox.min.css'|theme }}" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/images/apple-touch-icon.png'|theme }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/images/favicon-32x32.png'|theme }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/images/favicon-16x16.png'|theme }}">
+        <link rel="manifest" href="{{ 'assets/images/site.webmanifest'|theme }}">
+        <link rel="mask-icon" href="{{ 'assets/images/safari-pinned-tab.svg'|theme }}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfrzVgsUXmNEWq97HqLCVwLuidmV3K82Q&libraries=places"></script>
+
+        <!--Start of Tawk.to Script-->
+        <script async type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+
+
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5def5ca643be710e1d216108/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+
+        </script>
+        <!--End of Tawk.to Script-->
+    </head>
+    <body class="{{ this.page.id }}-pg">
+        <div class="site-wrapper">
+            <!-- Header -->
+            <header id="header" class="header">
+                <div class="container">
+                    {% partial 'site/header' %}
+                </div>
+            </header>
+            <div class="header-holder"></div>
+            <!-- Content -->
+            <main id="content">
+                {% page %}
+            </main>
+
+            <!-- Footer -->
+            <footer id="footer">
+                {% partial 'site/footer' %}
+            </footer>
+        </div>
+        <!-- Scripts -->
+        <script defer src="{{ 'assets/javascript/jquery.min.js'|theme }}"></script>
+        <script defer src="{{ 'assets/javascript/slick.min.js'|theme }}"></script>
+        <script defer src="{{ 'assets/javascript/build.js?v=1.196915'|theme }}"></script>
+      <!--    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+        <script defer src="{{ 'assets/javascript/main.js?v=1.1561'|theme }}"></script>
+        <script defer src="{{ 'assets/javascript/jquery.fancybox.min.js'|theme }}"></script>
+        <script defer src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script defer src="{{ 'assets/javascript/estimate.js'|theme }}"></script>
+        <script>
+            //-- Countries masonry grid
+            // function initializeMasonry(){
+            //     if($(window).width() > 767) {
+            //         $('.grid').masonry({
+            //             // options
+            //             percentPosition: true,
+            //             horizontalOrder: true,
+            //             itemSelector: '.grid-item',
+            //             columnWidth: '.grid-sizer',
+            //             transitionDuration: 0
+            //         });
+            //     }
+            // }
+            // initializeMasonry();
+
+        </script>
+        {% scripts %}
+        {% framework extras %}
+        {% component 'Support' %}
+    </body>
+</html>

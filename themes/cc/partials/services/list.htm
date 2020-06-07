@@ -1,0 +1,56 @@
+{% set storage = '/storage/app/media/' %}
+{% set counter = 0 %}
+{% if type == 'teaser' %}
+<div class="service-list-details">
+	
+	{% endif %}
+	{% for service in services %}
+		{% set img = storage ~ service.featured_image %}
+		{% if type == 'teaser' %}
+
+			{% set class1 = 'left' %}
+ 
+			{% if counter % 2 == 1 %}
+				{% set class1 = 'right' %}		
+			{% endif %}
+			{% set img = storage ~ service.image_on_list %}
+			
+			<div class="service-item {{ class1 }}">
+				<div class="service-side">
+					<div class="service-image"><img src="{{ url(img) }}" /></div>
+				</div>
+				<div class="service-side">
+					<div class="service-side__inner">
+						<a href="/services/{{ service.slug }}">
+							<h3 class="service-title">{{ service.name }}</h3>
+							<div class="service-text">
+							{% if service.short_text %}
+								{{ service.short_text|raw }} 
+							{% else %} 
+								{{ service.excerpt|raw }} 
+							{% endif %}</div>
+							<div class="service-cta">Learn more</div>
+						</a>
+					</div>
+				</div>
+			</div>		
+		{% else %}
+			<div class="service-item">
+				<a href="/services/{{ service.slug }}">
+					<div class="service-image"><img src="{{ url(img) }}" /></div>
+					<h3 class="service-title">{{ service.name }}</h3>
+					<div class="service-text">{{ service.excerpt|raw }}</div>
+					<div class="service-cta">Learn more</div>
+				</a>
+			</div>
+
+			
+		{% endif %}	
+	{% set counter = counter + 1 %}
+{% endfor %}
+
+	{% if type == 'teaser' %}
+	
+</div>
+{% endif %}
+

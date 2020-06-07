@@ -1,0 +1,44 @@
+{% put meta %}
+{% default %}
+    {% if post.redirect_url %}
+        <meta http-equiv="refresh" content="0; url={{post.redirect_url}}" />
+    {% endif %}
+
+    {% if post.seo_title %}
+        <title>{{ post.seo_title | generateTitle}}</title>
+    {% else %}
+        <title>{{ post.title | generateTitle }}</title>
+    {% endif %}
+
+    {% if post.seo_description %}
+        <meta name="description" content="{{post.seo_description}}">
+    {% elseif post.content_html %}
+        <meta name="description" content="{{post.content_html|slice(0,200)|striptags|trim }}">
+    {% else %}
+        <meta name="description" content="{{ this.page.components['SeoGeneral'].seo.attributes.meta_desc }}">
+    {% endif %}
+
+    {% if post.seo_keywords %}
+        <meta name="keywords" content="{{post.seo_keywords}}">
+    {% endif %}
+
+    {% if post.canonical_url %}
+        <link rel="canonical" href="{{post.canonical_url}}" />
+    {% else %}
+        {{ '' | generateCanonicalUrl}}
+    {% endif %}
+
+        <meta name="robots" content="{{post.robot_index}},{{post.robot_follow}}">
+
+    {{ ''|otherMetaTags|raw }}
+<meta property="og:title" content="{{ post.title | generateTitle }}" />
+    {{ post|generateOgTags }}
+    
+    {% if post.featured_images %}
+        {% set path = post.featured_images[0].path %}
+        <meta property="og:image" content="{{ url(path) }}">
+    {% else %}
+        {% set image = path ~ this.page.components['SeoGeneral'].seo.attributes.og_image %}
+        <meta property="og:image" content="{{ url(image) }}">
+    {% endif %}
+{% endput %}

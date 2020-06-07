@@ -1,0 +1,38 @@
+title = "Our services"
+url = "/services"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[ServicesList]
+type = "teaser"
+
+[slider]
+slide_show_id = 2
+
+[Blocks]
+region = 8
+
+[Blocks footerTeaser]
+region = 18
+
+[slider sliderMob]
+slide_show_id = 4
+
+[SeoGeneral]
+==
+<section class="hero-main">
+	<div class="container">
+		{% component 'slider' %}
+	</div>
+</section>
+
+<!-- app estimate form-->
+{% partial 'site/cc-app-form' %}
+
+<section class="services-list">
+	{% component 'Blocks' %}
+	{% component 'ServicesList' %}
+</section>
+{% component 'footerTeaser' %}

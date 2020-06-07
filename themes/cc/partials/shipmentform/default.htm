@@ -1,0 +1,26 @@
+<form data-request="{{ __SELF__ }}::onFormSubmit" data-request-validate>
+
+    {{ form_token() }}
+
+    <div id="{{ __SELF__ }}_forms_flash"></div>
+
+    <div class="input-wrapper form-group">
+        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Your first name*">
+    </div>
+
+    <div class="input-wrapper form-group">
+        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Your last name*">
+    </div>
+
+    <div class="input-wrapper form-group">
+        <input type="text" id="phone" name="phone" class="form-control" placeholder="Your phone number">
+    </div>
+
+
+
+        {% partial '@recaptcha' %}
+
+
+    <button id="simpleContactSubmitButton" type="submit" class="btn-contact"><span>Submit</span></button>
+
+</form>

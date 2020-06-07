@@ -1,0 +1,35 @@
+title = "Shipment Success"
+url = "/shipment-success"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Blocks]
+region = 12
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+authorFilter = "{{ :author }}"
+categoryFilter = "tips-tricks"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "post"
+
+[SeoGeneral]
+==
+<section class="shipment-intro">
+	{% component 'Blocks' %}
+</section>
+
+<main class="shipment-success">
+	<div class="container">
+		<div class="success-message">
+			<i class="icon-checked"></i>
+			<h2>Excellent!</h2>
+			<p>One of our representatives will get in touch with you shortly</p>
+		</div>
+	</div>
+</main>

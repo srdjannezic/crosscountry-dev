@@ -1,0 +1,10 @@
+name: TestimonialsController
+form: $/cc/testimonials/models/testimonialsmodel/fields.yaml
+modelClass: Cc\Testimonials\Models\TestimonialsModel
+defaultRedirect: cc/testimonials/testimonialscontroller
+create:
+    redirect: 'cc/testimonials/testimonialscontroller/update/:id'
+    redirectClose: cc/testimonials/testimonialscontroller
+update:
+    redirect: cc/testimonials/testimonialscontroller
+    redirectClose: cc/testimonials/testimonialscontroller

@@ -1,0 +1,79 @@
+fields:
+    featured:
+        label: 'Featured?'
+        span: auto
+        type: switch
+        comment: 'if selected this will be visible on home page'
+    is_review:
+        label: 'Show on review page'
+        span: auto
+        type: switch
+    name:
+        label: 'Testimonail name'
+        span: left
+        type: text
+    author:
+        label: 'Testimonial Author'
+        span: auto
+        type: text
+    type:
+        label: Type
+        options:
+            text: text
+            video: video
+        showSearch: true
+        span: auto
+        type: dropdown
+    video:
+        label: Video
+        mode: file
+        span: auto
+        type: mediafinder
+        comment: 'Only if video testiomonial'
+    youtube:
+        label: 'Embed Youtube video'
+        size: large
+        span: full
+        type: textarea
+        comment: 'enbed youtube video'
+    source:
+        label: Source
+        options:
+            Yelp: Yelp
+            Trustpilot: Trustpilot
+        showSearch: true
+        span: auto
+        type: dropdown
+    source_url:
+        label: 'Source URL'
+        span: auto
+        type: text
+    review:
+        label: Review
+        options:
+            1: '1'
+            2: '2'
+            3: '3'
+            4: '4'
+            5: '5'
+        showSearch: true
+        span: auto
+        type: dropdown
+    location:
+        label: Location
+        span: auto
+        type: text
+    title:
+        label: 'Testimonal title'
+        span: auto
+        type: text
+    content:
+        label: Comment
+        size: ''
+        span: full
+        type: richeditor
+    area:
+        label: Areas
+        nameFrom: name
+        span: auto
+        type: relation

@@ -1,0 +1,11 @@
+plugin:
+    name: 'cc.ccsupport::lang.plugin.name'
+    description: 'cc.ccsupport::lang.plugin.description'
+    author: CC
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Phone Contacts'
+        url: /cc/ccsupport/ccsupportcontroller
+        icon: icon-life-ring

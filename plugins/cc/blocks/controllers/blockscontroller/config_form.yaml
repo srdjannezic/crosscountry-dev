@@ -1,0 +1,10 @@
+name: BlocksController
+form: $/cc/blocks/models/blocksmodel/fields.yaml
+modelClass: Cc\Blocks\Models\BlocksModel
+defaultRedirect: cc/blocks/blockscontroller
+create:
+    redirect: 'cc/blocks/blockscontroller/update/:id'
+    redirectClose: cc/blocks/blockscontroller
+update:
+    redirect: cc/blocks/blockscontroller
+    redirectClose: cc/blocks/blockscontroller

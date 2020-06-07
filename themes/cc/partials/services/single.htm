@@ -1,0 +1,95 @@
+{% set storage = '/storage/app/media/' %}
+
+<section class="service-single__top">
+	<div class="container">
+		<div class="intro">
+			<h1>{{ service.name }}</h1>
+			<h3>{{ service.subtitle|raw }}</h3>
+		</div>
+	</div>
+</section>
+
+<section class="service-single__media">
+	{% if service.media or service.youtube %}
+	<div class="container-row">
+		<div class="media-left">
+			{% set media = service.media|split('.')|last %}
+			{% set img = storage ~ service.media  %}
+
+			{% if service.youtube %}
+				<div class="media-box{% if service.media %} yes-thumb{% else %} no-thumb{% endif %}">
+					<figure class="iframe-thumb" style="background-image: url({{ url(img) }}); background-repeat: no-repeat; background-size: cover;">
+						<i class="icon-play"></i>
+						{% if service.media %}
+						<!-- <img src="{{ url(img) }}" />-->
+						{% endif %}
+					</figure>
+					<div class="iframe-lightbox">
+						<i class="icon-close"></i>
+						<div class="video-holder">
+							<div class="iframe-wrapper">			
+								{{ service.youtube|raw }}
+							</div>
+						</div>
+					</div>
+				</div>
+			{% else %}
+				<img src="{{ url(img) }}" />
+			{% endif %}
+		</div>
+		{% endif %}
+		<div class="media-right">
+			<div class="media-right__inner">
+				{% if service.content_headline %}
+					<h3>{{ service.content_headline }}</h3>
+				{% endif %}
+				{{ service.content|raw }}
+			</div>
+		</div>
+	</div>
+</section>
+<div class="service-stories">
+
+	<div class="single-stories-tabs">
+		<div class="container">
+			<h2 class="single-stories-tabs__title">What you need to know.</h2>
+			{% for q in service.questions %}
+				
+				<div class="story-row{% if loop.first %} active{% endif %}">
+					<div class="story__tab"><span>{{ q.question }}</span></div>
+					<div class="story__panel">{{ q.answer|raw }}</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<section class="promo-service">
+		<div class="intro">
+			<div class="container">
+				<h2>{{ service.three_box_title }}</h2>
+				<p>{{ service.three_box_subtitle|raw }}</p>
+			</div>
+		</div>
+		{% set box_counter = 1 %}
+		<div class="inner-promo">
+			<div class="container">
+			<div class="three-box">
+				{% for item in service.three_box %}
+					<div class="box">
+						<div class="box-left"><i class="icon-{{ box_counter }}"></i></div>
+						<div class="box-right">
+							<h4>{{ item.in_title }}</h4>
+							{{ item.in_content|raw }}
+						</div>
+					</div>
+					{% set box_counter = box_counter + 1 %}
+				{% endfor %}
+			</div> 
+			{% if service.three_image %}
+				{% set backimg = '/storage/app/media/' ~ service.three_image %}
+				<div class="img-wrapper" style="background-image: url('{{ url(backimg) }}');">
+				</div>
+			{% endif %}
+		</div>
+	</section>
+	{% component 'footerTeaser' %}
+</div>

@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table cc_authors_'
+    - builder_table_create_cc_authors_.php
+1.0.3:
+    - 'Updated table cc_authors_'
+    - builder_table_update_cc_authors_.php

@@ -1,0 +1,265 @@
+//-------------------------
+//----------- SITE HEADER
+//-------------------------
+body.noScroll {
+	.header {
+		z-index: 3!important;
+		
+	}
+	.header {
+		@include breakpoint(desktop--small) {
+			z-index: 6!important;
+			.cta-mobile {
+				display: none!important;
+			}
+			.cta-desk {
+				display: none;
+			}
+		}
+		&__nav {
+			@include breakpoint(desktop--small) {
+				padding-top: 12rem!important;
+			}
+		}
+	}
+}
+
+
+body.noScroll  .header.bigIndex {
+	z-index: 9!important;
+}
+.header {
+	position: fixed;
+	padding: 14px 0;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: $c-white;
+	z-index: 9;
+	transition: all ease 0.2s;
+	// box-shadow: 0 16px 40px rgba(0,0,0,0.03);
+	@include breakpoint(mobile) {
+		box-shadow: 0 3px 5px rgba(0,0,0,0.1)!important;
+	}
+	&.shadow {
+		box-shadow: 0 5px 8px rgba(0,0,0,0.03);
+	}
+	.container {
+		@extend %clearfix;
+		position: relative;
+	}
+	&__allItems {
+		float: right;
+		display: table;
+		position: relative;
+		top: 5px;
+		@include breakpoint(desktop--small) {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			background-color: $c-white;
+			z-index: 6;
+			transform: translateX(100%);
+			opacity: 0;
+			transition-property: transform, opacity;
+			transition-duration: 0.5s, 1s; 
+			transition-delay: 0, 1s;
+			transition-timing-function: ease-in-out;
+		}
+		&.showMenu {
+			opacity: 1;
+			transform: translateX(0);
+			transition-duration: 0.5s, 0s; 
+		}
+	}
+	&__logo {
+		position: relative;
+		float: left;
+		width: 160px;
+		z-index: 66;
+		@include breakpoint(mobile) {
+			width: 12rem;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	&__nav {
+		display: table-cell;
+		vertical-align: middle;
+		height: 37px;
+		@include breakpoint(desktop--small) {
+			width: 100%;
+			padding: 0 4%;
+			
+		}
+		@include breakpoint(mobile) {
+			display: block;
+			vertical-align: middle;
+			height: auto;
+			overflow-y: scroll;
+			padding-top: 17rem;
+		}
+		@include breakpoint(mobile--l) {
+			width: 100%;
+			padding: 0 2rem;
+			padding-top: 20rem;
+		}
+		ul {
+			li {
+				display: inline-block;
+				margin-right: 4.3rem;
+				@include breakpoint(desktop--small) {
+					display: block;
+					text-align: center;
+					margin-right: 0;
+
+				}
+				a {
+					font-size: 16px;
+					color: $c-black;
+					@include breakpoint(desktop--small) {
+						font-size: 24px;
+						display: block;
+						padding: 20px 0;
+						border-bottom: 1px solid #F2F2F2;
+					}
+					@include breakpoint(mobile) {
+						font-size: 16px;
+					}
+				}
+				&:last-child {
+					margin-right: 5rem;
+					@include breakpoint(desktop--small) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+	&__cta {
+		display: table-cell;
+		vertical-align: middle;
+		font-size: 0;	
+		ul li {
+			display: inline-block;
+		}
+		&.cta-desk {
+			@include breakpoint(desktop--small) {
+				display: block;
+				@include absolute(center-horizontal);
+				top: 100px;
+				li {
+					display: block;
+					width: 200px;
+					margin-right: 0;
+
+				}
+				.btn-estimate {
+					margin-bottom: 12px;
+					height: 45px;
+				}
+				.btn-call {
+					height: 45px;
+				}
+			}
+			@include breakpoint(mobile--l) {
+				width: 100%;
+				top: 6rem;
+				padding: 0 2rem;
+			}
+			li {
+				@include breakpoint(mobile--l) {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.dropdown {
+		position: relative;
+
+		&>a {
+			@include breakpoint(desktop--small) {
+				border-bottom: none;
+			}
+		}
+		.dropdown-toggle {
+			@include breakpoint(desktop--small) {
+				height: 0;
+				overflow: hidden;
+				padding: 0;
+			}
+		}
+		&-menu {
+			display: none;
+			position: absolute;
+			left: -15px;
+			padding: 17px 20px 10px;
+			width: 120px;
+			background-color: $c-white;
+			box-shadow: 7px 7px 10px rgba(0,0,0,.01);
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px; 
+			@include breakpoint(desktop--small) {
+				display: block;
+				width: 100%;
+				position: static;
+				padding-top: 0;
+				border-radius: 0;
+				box-shadow: none;
+			}
+			li {
+				display: block;
+				margin-right: 0!important;
+				a {
+					display: block;
+					padding: 10px 0;
+					font-size: 14px;
+					color: #202020;
+					@include breakpoint(desktop--small) {
+						padding: 20px 0;
+						font-size: 24px;
+						color: #000;
+					}
+					@include breakpoint(mobile) {
+						font-size: 16px;
+					}
+				}
+				&:last-child {
+					a {
+						border-bottom: none;
+					}
+				}
+
+			}
+		}
+		&:hover {
+			.dropdown-menu {
+				display: block;
+			}
+		}
+	}
+}
+
+.header-holder {
+	width: 100%;
+	height: 70px;
+	@include breakpoint(tablet) {
+		height: 47px;
+	}
+}
+
+.logo-desk {
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}
+
+.logo-mob {
+	display: none;
+	@include breakpoint(tablet) {
+		display: block;
+	}
+}

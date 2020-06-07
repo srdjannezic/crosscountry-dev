@@ -1,0 +1,89 @@
+//-------------------------
+//------------------HELPERS
+//-------------------------
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%invisible {
+    width      : 1px;
+    height     : 1px;
+
+    position   : absolute;
+    left       : 0;
+
+    text-indent: -5000px;
+
+    overflow   : hidden;
+}
+
+.input-wrapper {
+    width: 100%;
+    border-radius: 5px;
+    height: 49px;
+    @include breakpoint(mobile) {
+        height: 45px;
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        border-radius: 5px;
+        background-color: #F2F2F2;
+    }
+}
+.select-wrapper {
+    select {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.noScroll {
+	overflow: hidden;
+}
+
+.clear           { clear: both; }
+
+.hide            { display: none; }
+.block           { display: block; }
+.inline-block    { display: inline-block; }
+
+.fleft           { float: left; }
+.fright          { float: right; }
+
+.wrapUp {
+    height: auto;
+    overflow: hidden;
+}
+
+.expand {
+    height: auto!important;
+}
+
+.show {
+    display: block;
+}
+
+.show-popup {
+    z-index: 555!important;
+}
+
+.imgWrapper,
+.imgWrapper--small,
+.imgWrapper--mid {
+    img {
+        width: 100%;
+    }
+}
+
+

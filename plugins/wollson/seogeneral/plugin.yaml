@@ -1,0 +1,11 @@
+plugin:
+    name: 'wollson.seogeneral::lang.plugin.name'
+    description: 'wollson.seogeneral::lang.plugin.description'
+    author: Wollson
+    icon: oc-icon-at
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'SEO General'
+        url: /wollson/seogeneral/seogeneral/update/1
+        icon: icon-at

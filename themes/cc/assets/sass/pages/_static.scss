@@ -1,0 +1,35 @@
+//-------------------------
+//----------- STATIC PAGES
+//-------------------------
+
+.container.narrow {
+	max-width: 650px;
+}
+
+.privacy {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	@include breakpoint(mobile) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	p {
+		margin-bottom: 20px;
+		font-size: 17px;
+		color: #444;
+		line-height: 1.7;
+		@include breakpoint(mobile) {
+			font-size: 14px;
+		}
+	}
+	p strong {
+		font-family: $baseFont-bold;
+	}
+	.date {
+		font-size: 14px;
+		color: #888;
+	}
+	a {
+		color: $c-mainOrange;
+	}
+}

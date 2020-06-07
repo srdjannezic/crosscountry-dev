@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table cc_testimonials_'
+    - builder_table_create_cc_testimonials_.php
+1.0.3:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials_.php
+1.0.4:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials__2.php
+1.0.5:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials__3.php
+1.0.6:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials__4.php
+1.0.7:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials__5.php
+1.0.8:
+    - 'Created table cc_testimonials_areas'
+    - builder_table_create_cc_testimonials_areas.php
+1.0.9:
+    - 'Updated table cc_testimonials_'
+    - builder_table_update_cc_testimonials__6.php

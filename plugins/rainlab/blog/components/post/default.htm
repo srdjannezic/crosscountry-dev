@@ -1,0 +1,50 @@
+{% set post = __SELF__.post %}
+
+{% if post.featured_images.count %}
+    <div class="single-blog__top">
+        {% for image in post.featured_images %}
+            <figure class="img-wrapper">
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 100%" />
+            </figure>
+        {% endfor %}
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    </div>
+{% endif %}
+
+<div class="single-blog__info">
+    <div class="container">
+        <p>{{ post.published_at|date('d/m/Y') }}</p>
+    </div>
+</div>
+
+<div class="single-blog__body">
+    <div class="container">
+        {{ post.content_html|raw }}
+        <div class="single-blog__body-author">
+            <a href="/author/{{ this.page.components['blogPost'].getAuthorSlug(post.author_id) }}">
+                {% set avatar = '/storage/app/media' ~ post.authors.avatar %}
+                <div class="inner">
+                    <div class="avatar-box">
+                        <img src="{{ url(avatar) }}" class="avatar" title="{{ post.authors.name }}" alt="{{ post.authors.name }}" />
+                    </div>
+                    <div class="author-info">
+                        {% set author_type = '' %}
+                        
+                        <h4 class="author-name">{{ post.authors.name }}</h4>
+                        {% if post.authors.type != 'Author' %} <span class="author-type {{ author_type }}">{{ post.authors.type }}</span>{% endif %}
+                        {% if post.author_description %}
+                            {{ post.author_description|raw }}
+                        {% else %}
+                            {{ post.authors.description|raw }}
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,49 @@
+<div class="review-wrapper">
+	{% for testimonial in testimonials %}
+		<a href="{{ testimonial.source_url }}" target="_blank" class="read-more">
+		<div class="reviewBox">
+				<div class="review__top">
+					<div class="review__left" >
+						<p class="author">{{ testimonial.author }}</p>
+						<p class="location">{{ testimonial.location }}</p>
+					</div>
+					<div class="review__right">
+						<div class="stars">
+							{% for i in 0..testimonial.review %}
+								<li><i class="icon-star"></i></li>
+							{% endfor %}
+						</div>
+						<div class="source">
+							{% if testimonial.source == 'Yelp' %}
+								<!-- yelp here -->
+								<img alt="" src="themes/cc/assets/images/testimonials/yelp-t.svg">
+							{% endif %}
+							
+							{% if testimonial.source == 'Trustpilot' %}
+								<!-- Trustpilot here -->
+								<img src="themes/cc/assets/images/testimonials/trustpilot-t.svg" alt="">
+							{% endif %}							
+						</div>
+					</div>
+				</div>
+				<div class="review__main">
+					
+						<div class="title">
+							<h4>{{ testimonial.title }}</h4>
+						</div>
+						<div class="content">
+							{% if testimonial.content|striptags|raw|length > 230 %}
+			                <p>{{ testimonial.content|slice(0,230)|striptags|raw }}...</p>
+			                <!--<a href="{{ testimonial.source_url }}" target="_blank" class="read-more">Read more.</a></p>-->
+							{% else %}
+							<p>{{ testimonial.content|slice(0,230)|striptags|raw }}...</p>
+							<!--<a href="{{ testimonial.source_url }}" target="_blank" class="read-more">Read more.</a></p>-->
+							{% endif %}
+						</div>
+				</div>
+			
+		</div>
+		</a>
+	{% endfor %}
+
+</div>

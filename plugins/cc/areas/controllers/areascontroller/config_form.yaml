@@ -1,0 +1,11 @@
+name: AreasController
+modelClass: Cc\Areas\Models\AreasModel
+form: $/cc/areas/models/areasmodel/fields.yaml
+defaultRedirect: cc/areas/areascontroller
+create:
+    redirect: 'cc/areas/areascontroller/update/:id'
+    redirectClose: cc/areas/areascontroller
+update:
+    redirect: cc/areas/areascontroller
+    redirectClose: cc/areas/areascontroller
+preview: {  }

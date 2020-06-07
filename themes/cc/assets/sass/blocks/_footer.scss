@@ -1,0 +1,131 @@
+.footer {
+	padding: 7rem 0 8rem;
+	background-color: $c-mainOrange;
+	@include breakpoint(desktop--small) {
+		padding: 2rem 0 3rem;
+	}
+	@include breakpoint(tablet) {
+		padding: 6rem 0 4rem;
+	}
+	.container {
+		@extend %clearfix;
+	}
+	&__partners {
+		float: left;
+		display: table;
+		margin-bottom: 60px;
+		@include breakpoint(tablet) {
+			float: none;
+			margin: 0 auto;
+			margin-bottom: 60px;
+		}
+		li {
+			display: table-cell;
+			vertical-align: middle;
+			padding-right: 3.6rem;
+			@include breakpoint(desktop--small) {
+				padding-right: 1rem;
+			}
+			@include breakpoint(mobile) {
+				width: auto;
+				height: 3.3rem;
+				img {
+					height: 100%;
+					width: auto;
+				}
+			}
+		}
+	}
+	&__social {
+		float: right;
+		@include breakpoint(tablet) {
+			float: none;
+			margin: 0 auto;
+			margin-bottom: 60px;
+			order: 2;
+
+		}
+		li {
+			display: inline-block;
+			margin-right: 10px;
+			@include breakpoint(tablet) {
+				margin: 0.5rem;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			div {
+				font-size: 30px;
+				@include breakpoint(mobile) {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+
+	&__left,
+	&__right {
+		width: 50%;
+		float: left;
+		@extend %clearfix;
+		@include breakpoint(tablet) {
+			width: 100%;
+			float: none;
+			text-align: center;
+		}
+	}
+
+	.licence,
+	.footer__right__nav a,
+	.copyright {
+		font-size: 12px;
+		line-height: 1.4;
+		color: $c-white;
+		clear: both;
+		@include breakpoint(mobile) {
+			font-size: 1.2rem;
+		}
+
+	}
+	.footer__right__nav {
+		margin: 30px 0 28px; 
+		@include breakpoint(tablet) {
+			order: 1;
+		}
+		li {
+			display: inline-block;
+			margin-left: 20px;
+		}
+	}
+	.footer__right__nav,
+	.copyright {
+		float: right;
+		text-align: right;
+		clear: both;
+		@include breakpoint(tablet) {
+			text-align: center;
+		}
+	}
+	.footer__right {
+		@include breakpoint(tablet) {
+			display: flex;
+			flex-direction: column;
+			margin-top: 60px;
+		}
+	}
+	.copyright {
+		@include breakpoint(tablet) {
+			order: 3;
+		}	
+	}
+	.licence {
+		float: left;
+		text-align: left;
+		@include breakpoint(tablet) {
+			float: none;
+		}
+	}
+
+
+}
+

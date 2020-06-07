@@ -1,0 +1,11 @@
+name: SeoGeneral
+modelClass: Wollson\SeoGeneral\Models\SeoGeneral
+form: $/wollson/seogeneral/models/seogeneral/fields.yaml
+defaultRedirect: /backend
+create:
+    redirect: /backend
+    redirectClose: /backend
+update:
+    redirect: /backend
+    redirectClose: /backend
+preview: {  }

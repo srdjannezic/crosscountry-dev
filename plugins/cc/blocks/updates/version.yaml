@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table cc_blocks_'
+    - builder_table_create_cc_blocks_.php
+1.0.3:
+    - 'Created table cc_blocks_region'
+    - builder_table_create_cc_blocks_region.php
+1.0.4:
+    - 'Updated table cc_blocks_'
+    - builder_table_update_cc_blocks_.php
+1.0.5:
+    - 'Updated table cc_blocks_'
+    - builder_table_update_cc_blocks__2.php
+1.0.6:
+    - 'Updated table cc_blocks_'
+    - builder_table_update_cc_blocks__3.php

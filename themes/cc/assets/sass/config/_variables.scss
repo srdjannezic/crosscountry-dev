@@ -1,0 +1,41 @@
+//-------------------------
+//----------------VARIABLES
+//-------------------------
+
+//-----COLORS
+$c-black           : #000;
+$c-white           : #fff;
+$c-lightBlue       : #3DD6F5;
+$c-mainGreen       : #49D277;
+$c-mainOrange      : #EE3F23;
+$c-mainRed         : #EE3F23;
+
+
+//-----PATHS
+$localFontBase: "/themes/cc/assets/fonts/";
+$imgBaseUrl   : "/images/";
+
+
+//------DIMENSIONS
+$baseFontSize: 10;
+$fullWidth: 100%;
+$fullHeight: 100%;
+
+//------FONT
+$fontDefault: Arial, Helvetica, Tahoma, sans-serif;
+$baseFont: 'MarkRegular', sans-serif;
+$baseFont-med: 'MarkMedium', sans-serif;
+$baseFont-bold: 'MarkBold', sans-serif;
+$baseFont-book: 'MarkBook', sans-serif;
+
+$styledFont: 'NoeDisplay-Regular', sans-serif;
+$styledFont-bold: 'NoeDisplay-Bold', sans-serif;
+
+
+
+//------MEDIA QUERIES
+$desktop--Large  : 1700px;
+$desktop         : 1440px;
+$tablet          : 860px;
+$mobile			 : 767px;
+

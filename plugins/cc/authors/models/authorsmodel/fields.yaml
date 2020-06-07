@@ -1,0 +1,24 @@
+fields:
+    name:
+        label: 'Author Name'
+        span: auto
+        type: text
+    type:
+        label: 'Author Type'
+        options:
+            'Guest Author': Guest-Author
+            Author: Author
+        showSearch: true
+        span: auto
+        type: dropdown
+    avatar:
+        label: 'Author Avatar'
+        mode: file
+        span: auto
+        type: mediafinder
+    description:
+        label: 'Author Description'
+        size: ''
+        span: left
+        type: richeditor
+        comment: 'General author description that will be visible if nothing is entered in Post Author Description'

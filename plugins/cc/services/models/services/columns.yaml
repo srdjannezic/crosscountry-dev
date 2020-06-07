@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: name
+        type: text
+    content:
+        label: content
+        type: text
+    featured_image:
+        label: featured_image
+        type: text
+    slug:
+        label: slug
+        type: text
+    subtitle:
+        label: subtitle
+        type: text

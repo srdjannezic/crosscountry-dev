@@ -1,0 +1,30 @@
+{% set storage = '/storage/app/media/' %}
+{% for rev in reviews %}
+	{% set video = storage ~ rev.video %}
+	
+
+	<div class="testimonial-item video-item">
+<!-- 		<a href="{{ testimonial.source_url }}" target="_blank"> -->
+			{% if rev.video %}
+			<video src="{{ video }}">
+				
+			</video>
+			{% else %}
+			<div class="media-box">
+				<figure class="iframe-thumb">
+					<i class="icon-play"></i>
+				</figure>
+				<div class="iframe-lightbox">
+					<div class="video-holder">
+						<div class="iframe-wrapper">
+							{{ rev.youtube|raw }}
+						</div>
+					</div>
+					<i class="icon-close"></i>
+				</div>
+			</div>
+			{% endif %}
+	<!-- 	</a> -->
+	</div>
+
+{% endfor %}

@@ -1,0 +1,19 @@
+fields:
+    page_title:
+        label: 'Page Title'
+        span: auto
+        type: text
+    meta_title:
+        label: 'Meta Title'
+        span: auto
+        type: text
+    meta_desc:
+        label: 'Meta Description'
+        size: ''
+        span: auto
+        type: textarea
+    og_image:
+        label: 'Og Image'
+        mode: file
+        span: auto
+        type: mediafinder

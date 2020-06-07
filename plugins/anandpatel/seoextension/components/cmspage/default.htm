@@ -1,0 +1,105 @@
+{% if hasBlog %}
+    {% placeholder meta default %}
+
+    {% endplaceholder %}
+
+{% else %}
+    {% set title = '' %}
+    <!-- SERVICE SEO TITLE -->
+    {% if this.page.components['ServiceSingle'].service.attributes.seo_title %}
+        {% set title = this.page.components['ServiceSingle'].service.attributes.seo_title %}
+    {% elseif this.page.components['ServiceSingle'].service.attributes.name %}
+        {% set title = this.page.components['ServiceSingle'].service.attributes.name %}
+
+    <!-- AREA SEO TITLE -->
+    {% elseif this.page.components['AreaSingle'].area.attributes.seo_title %}
+        {% set title = this.page.components['AreaSingle'].area.attributes.seo_title %}
+    {% elseif this.page.components['AreaSingle'].area.attributes.name %}
+        {% set title = this.page.components['AreaSingle'].area.attributes.name %}
+    {% elseif this.page.id == 'author-page' %}
+        {% set title = this.page.components['blogPosts'].posts[0].authors.name %}
+    {% elseif this.page.id == 'category' or this.page.id == 'category-landing-page' %}
+        {% set title = this.page.components['blogPosts'].category.name %}
+    {% elseif __SELF__.seo_title %}
+        {% if this.page.meta_title == '' %}
+            {% set title = __SELF__.seo_title ~ ' | ' ~  this.page.components['SeoGeneral'].seo.attributes.page_title %}
+        {% else %}
+            {% set title = this.page.meta_title %}
+        {% endif %}
+    {% endif %}
+
+    {% set desc = '' %}
+    <!-- SERVICE SEO DESC -->
+    {% if this.page.components['ServiceSingle'].service.attributes.seo_description %}
+        {% set desc = this.page.components['ServiceSingle'].service.attributes.seo_description %}
+    {% elseif this.page.components['ServiceSingle'].service.attributes.content %}
+        {% set desc = this.page.components['ServiceSingle'].service.attributes.content %}
+
+
+    <!-- AREA SEO DESC -->
+    {% elseif this.page.components['AreaSingle'].area.attributes.seo_description %}
+        {% set desc = this.page.components['AreaSingle'].area.attributes.seo_description %}
+    {% elseif this.page.components['AreaSingle'].area.attributes.content %}
+        {% set desc = this.page.components['AreaSingle'].area.attributes.content %}
+    
+    {% elseif __SELF__.seo_description %}
+        {% set desc = __SELF__.seo_description %}
+    {% elseif this.page.components['SeoGeneral'].seo.attributes.meta_desc %}
+        {% set desc = this.page.components['SeoGeneral'].seo.attributes.meta_desc %}
+    {% endif %}
+    {% set image = '' %}
+    {% set path = '/storage/app/media' %}
+
+    {% if this.page.components['ServiceSingle'].service.attributes.seo_image %}
+        {% set image = path ~ this.page.components['ServiceSingle'].service.attributes.seo_image %}
+    {% elseif this.page.components['ServiceSingle'].service.attributes.image_on_list %}
+        {% set image = path ~ this.page.components['ServiceSingle'].service.attributes.image_on_list %}
+    {% elseif this.page.components['AreaSingle'].area.attributes.seo_image %}
+        {% set image = path ~ this.page.components['AreaSingle'].area.attributes.seo_image %}
+    {% elseif this.page.components['SeoGeneral'].seo.attributes.og_image %}
+        {% set image = path ~ this.page.components['SeoGeneral'].seo.attributes.og_image %}
+    {% endif %}   
+
+    {% if __SELF__.redirect_url %}
+        <meta http-equiv="refresh" content="0; url={{__SELF__.redirect_url}}" />
+    {% endif %}
+
+    <title>{{ title }}</title>
+    <meta name="title" content="{{ title }} | {{ this.page.components['SeoGeneral'].seo.attributes.page_title }}">
+    <meta name="description" content="{{ desc|slice(0,200)|striptags|trim }}">
+
+
+    {% if __SELF__.seo_keywords %}
+        <meta name="keywords" content="{{__SELF__.seo_keywords}}">
+    {% endif %}
+
+    {% if __SELF__.canonical_url %}
+        <link rel="canonical" href="{{__SELF__.canonical_url}}" />
+    {% else %}
+        {{ '' | generateCanonicalUrl}}
+    {% endif %}
+
+    <meta name="robots" content="{{__SELF__.robot_index}},{{__SELF__.robot_follow}}">
+
+    {{ ''|otherMetaTags|raw }}
+
+    <meta property="og:title" content="{{ title }}" />
+
+    {% if __SELF__.ogUrl %}
+        <meta property="og:url" content="{{ __SELF__.ogUrl }}" />
+    {% endif %}
+
+    {% if __SELF__.ogSiteName %}
+        <meta property="og:site_name" content="{{ __SELF__.ogSiteName }}" />
+    {% endif %}
+
+    <meta property="og:image" content="{{ url(image) }}">
+
+    <meta property="og:description" content="{{ desc|slice(0,200)|striptags|trim }}" />
+
+
+    {% if __SELF__.ogFbAppId %}
+        <meta property="fb:app_id" content="{{ __SELF__.ogFbAppId  }}" />
+    {% endif %}
+
+{% endif %}

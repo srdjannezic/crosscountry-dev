@@ -1,0 +1,11 @@
+name: ServicesController
+modelClass: Cc\Services\Models\Services
+form: $/cc/services/models/services/fields.yaml
+defaultRedirect: cc/services/servicescontroller
+create:
+    redirect: 'cc/services/servicescontroller/update/:id'
+    redirectClose: cc/services/servicescontroller
+update:
+    redirect: cc/services/servicescontroller
+    redirectClose: cc/services/servicescontroller
+preview: {  }

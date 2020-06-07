@@ -1,0 +1,50 @@
+//-------------------------
+//----------- SUCESS
+//-------------------------
+
+.estimate-success,
+.shipment-success {
+	.container {
+		max-width: 600px;
+	}
+}
+
+.estimate-success {
+	min-height: 65vh;
+}
+.success-message {
+	.icon-checked {
+		position: relative;
+		display: block;
+		margin: 0 auto 43px;
+		width: 83px;
+		height: 83px;
+		font-size: 30px;
+		border: 4px solid $c-mainGreen;
+		border-radius: 50%;
+		@include breakpoint(mobile) {
+			width: 50px;
+			height: 50px;
+			font-size: 20px;
+		}
+		&:before {
+			@include absolute(center);
+		}
+	}
+	padding: 90px 0;
+	text-align:center;
+	h2 {
+		margin-bottom: 25px;
+		font-size: 34px;
+		@include breakpoint(mobile) {
+			font-size: 24px;
+		}
+	}
+	p {
+		font-size: 24px;
+		color: #444;
+		@include breakpoint(mobile) {
+			font-size: 16px;
+		}
+	}
+}

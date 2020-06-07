@@ -1,0 +1,93 @@
+//-------------------------
+//----------- REVIEWS
+//-------------------------
+
+.reviews-intro {
+	background-color: #F2F2F2;
+	
+}
+
+.video-reviews,
+.text-reviews {
+	.itemList {
+		@extend %clearfix;
+		margin-bottom: 60px;
+	}
+	.container {
+		max-width: 1000px;
+	}
+}
+
+.review__main {
+	.read-more {
+		font-size: 14px;
+		color: $c-mainOrange;
+		@include breakpoint(mobile) {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+.review__right {
+	.source {
+	    position: absolute;
+	    right: 32px;
+	    top: 37px;
+	    @include breakpoint(mobile) {
+	    	top: 2.4rem;
+	    	right: 2.5rem;
+	    }
+	}
+}
+
+.video-reviews {
+	padding: 90px 0;
+	background-color: #F8F8F8;
+	h3 {
+		margin-bottom: 40px;
+		font-family: $baseFont-med;
+		font-size: 20px;
+		text-align: center;
+		color: $c-black;
+	}
+	.testimonial-item {
+		float: left;
+		width: 33.33%;
+		padding: 14px;
+		@include breakpoint(tablet) {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 2rem;
+		}
+		
+	}
+	.iframe-thumb {
+		position: relative; 
+		width: 100%; 
+		padding-top: 66.25%; /* 16:9 Aspect Ratio */ 
+		overflow: hidden;
+		border-radius: 5px;
+		.icon-play {
+			@include absolute(center);
+			z-index: 2;
+			font-size: 35px;
+		}
+		img {
+			@include absolute(center);
+			width: 100%;
+		}
+	}
+}
+
+.text-reviews {
+	.reviewBox {
+		float: left;
+		width: 48%;
+		margin: 1%;
+		@include breakpoint(tablet) {
+			width: 100%;
+			margin-bottom: 2rem;
+		}
+	}
+}
+

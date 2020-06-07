@@ -1,0 +1,46 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    type:
+        label: 'Block Type'
+        options:
+            3-box: 3-box
+            intro: intro
+            footer-message: footer-message
+        showSearch: true
+        span: auto
+        type: dropdown
+    content:
+        label: 'Block Items'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                title:
+                    label: 'Item Title'
+                    size: tiny
+                    span: auto
+                    type: textarea
+                subtitle:
+                    label: 'Item subtitle'
+                    size: ''
+                    span: auto
+                    type: richeditor
+                content:
+                    label: 'Item content'
+                    size: ''
+                    span: full
+                    type: richeditor
+                image:
+                    label: 'Item Image'
+                    mode: file
+                    span: auto
+                    type: mediafinder
+    back_img:
+        label: 'Background Image'
+        mode: file
+        span: full
+        type: mediafinder
